@@ -10,3 +10,15 @@ const throttle = (fn, time) => {
         }, time)
     }
 }
+// 还有一个版本是在冷却结束时调用 fn
+// 简洁版，删掉冷却中变量，直接使用 timer 代替
+const throttle = (f, time) => {
+    let timer = null
+    return (...args) => {
+        if (timer) { return }
+        f.call(undefined, ...args)
+        timer = setTimeout(() => {
+            timer = null
+        }, time)
+    }
+}
