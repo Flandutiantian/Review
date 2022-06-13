@@ -23,4 +23,6 @@ const throttle = (f, time) => {
     }
 }
 
-
+const f = throttle(() => { console.log('hi') }, 3000)
+f() // 打印 hi
+f() // 技能冷却中
