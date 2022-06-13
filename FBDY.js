@@ -20,3 +20,8 @@ const eventHub = {
         q.splice(index, 1)
     }
 }
+eventHub.on('click', console.log)
+eventHub.on('click', console.error)
+setTimeout(() => {
+    eventHub.emit('click', 'frank')
+}, 3000)
