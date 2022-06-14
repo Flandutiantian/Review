@@ -20,7 +20,12 @@ const deepClone = (a, cache) => {
         } else {
             result = {}
         }
-
+        cache.set(a, result)
+        for (let key in a) {
+            if (a.hasOwnProperty(key)) {
+                result[key] = deepClone(a[key], cache)
+            }
+        }
         return result
     } else {
         return a
