@@ -11,7 +11,17 @@ const deepClone = (a, cache) => {
             } else {
                 result = (...args) => { return a.call(undefined, ...args) }
             }
+        } else if (a instanceof Array) {
+            result = []
+        } else if (a instanceof Date) {
+            result = new Date(a - 0)
+        } else if (a instanceof RegExp) {
+            result = new RegExp(a.source, a.flags)
+        } else {
+            result = {}
         }
+
+        return result
     } else {
         return a
     }
