@@ -1,0 +1,112 @@
+
+    <!DOCTYPE html>
+
+    <html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>JS常用鼠标事件</title>
+
+        <style>
+            li {
+                font-size: 18px;
+                line-height: 35px;
+            }
+
+            li:hover {
+                cursor: pointer;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <ol>
+
+            <li>单击我变色！</li>
+
+            <li>双击有惊喜！</li>
+
+            <li>鼠标滑过字体变大，鼠标离开字体变小！</li>
+
+            <li>鼠标按下文字为红色，鼠标抬起文字为绿色，鼠标移动打印“鼠标在 li 中移动了...”！</li>
+
+        </ol>
+
+
+
+        <script>
+        // 获取 li 标签
+        
+        var oLis = document.getElementsByTagName("li");
+        
+        /* 单击第一个 li */
+        
+        oLis[0].onclick = function () {
+        
+            this.style.backgroundColor = 'red';
+        
+        }
+        
+        /* ******************************************* */
+        
+        /* 双击第二个 li */
+        
+        oLis[1].ondblclick = function () {
+        
+            this.style.color = 'red';
+        
+        }
+        
+        /* ******************************************* */
+        
+        /* 鼠标滑过第三个 li */
+        
+        oLis[2].onmouseover = function () {
+        
+            this.style.fontSize = 22 + 'px';
+        
+        }
+        
+        /* 鼠标离开第三个 li */
+        
+        oLis[2].onmouseout = function () {
+        
+            this.style.fontSize = 18 + 'px';
+        
+        }
+        
+        /* ******************************************* */
+        
+        /* 鼠标按下第四个 li */
+        
+        oLis[3].onmousedown = function () {
+        
+            this.style.color = 'red';
+        
+        }
+        
+        /* 鼠标抬起第四个 li */
+        
+        oLis[3].onmouseup = function () {
+        
+            this.style.color = 'blue';
+        
+        }
+        
+        /* 鼠标在第四个 li 上移动 */
+        
+        oLis[3].onmousemove = function () {
+        
+            console.log('鼠标在 li 中移动了...');
+        
+        }
+        
+        </script>
+
+    </body>
+
+    </html>
