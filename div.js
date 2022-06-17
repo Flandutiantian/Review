@@ -14,7 +14,11 @@
                             position = [e.clientX, e.clientY] 
                             })
 
-
+                        document.addEventListener('mousemove', function(e){
+                         if(dragging === false){return}
+                        console.log('hi')
+                        
+                               })
                         document.addEventListener('mouseup', function(e){
                             dragging = false
                         })
